@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>usericon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Keyword-Search" transform="translate(-85.000000, -266.000000)" fill="#6E6E6E">
+            <g id="usericon" transform="translate(85.000000, 266.000000)">
+                <path d="M10.2681333,12.0015 C6.8464,12.0015 0,13.752 0,17.2515 L0,21 L20.5348,21 L20.5348,17.2515 C20.5348,13.752 13.6913333,12.0015 10.2681333,12.0015" id="Path"></path>
+                <path d="M10.2681333,0 C7.83933333,0 5.86813333,2.0175 5.86813333,4.5015 C5.86813333,6.9855 7.83933333,9.0015 10.2681333,9.0015 C12.6984,9.0015 14.6549333,6.9855 14.6549333,4.5015 C14.6549333,2.0175 12.6984,0 10.2681333,0" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

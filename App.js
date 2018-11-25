@@ -5,7 +5,7 @@ import LoginScreen from './screens/login_screen';
 import { createStackNavigator } from 'react-navigation';
 
 
-type Props = {};
+const Props = {};
 export default class App extends Component<Props> {
   render() {
     return (

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Map Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.2%" y="-3.1%" width="112.5%" height="115.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Material/Light/Search-360dp" transform="translate(-320.000000, -16.000000)" fill="#F4F4F4">
+            <g id="Map-Icon" filter="url(#filter-1)" transform="translate(321.000000, 16.000000)">
+                <g id="Layer_1">
+                    <path d="M21.9057259,30.0587934 L21.9057259,19.2218137 C22.5851482,20.1454398 23.0704498,20.7347901 23.0704498,20.7347901 C23.0704498,20.7347901 28.5058282,14.1408996 28.5120401,10.3897121 C28.5166989,7.53303251 26.0758258,5.21717308 23.0704498,5.21717308 C22.6705613,5.21717308 22.2815435,5.26065611 21.9057259,5.33869261 L21.9057259,2.10541897 L32,0.164212405 L32,32 L21.9057259,30.0587934 Z M23.0704498,6.38112054 C25.4317335,6.38112054 27.3457632,8.34950399 27.3457632,10.7775652 C27.3457632,13.2060146 23.0704498,19.5712309 23.0704498,19.5712309 C23.0704498,19.5712309 18.7951365,13.2056263 18.7951365,10.7775652 C18.7951365,8.34950399 20.7091662,6.38112054 23.0704498,6.38112054 Z M23.0704498,12.1996931 C23.9280749,12.1996931 24.6234151,11.5043529 24.6234151,10.6467278 C24.6234151,9.78910277 23.9280749,9.09376258 23.0704498,9.09376258 C22.2128248,9.09376258 21.5174846,9.78910277 21.5174846,10.6467278 C21.5174846,11.5043529 22.2128248,12.1996931 23.0704498,12.1996931 Z M17.6288596,10.3897121 C17.632742,12.627535 19.5677367,15.8759501 21.1292433,18.1335733 L21.1292433,30.0587934 L11.0349691,32 L11.0349691,0.164212405 L21.1292433,2.10541897 L21.1292433,5.56154313 C19.0828233,6.30541348 17.6253654,8.18372495 17.6288596,10.3897121 Z M0.164212405,2.10541897 L10.2584865,0.164212405 L10.2584865,32 L0.164212405,30.0587934 L0.164212405,2.10541897 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
