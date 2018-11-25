@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {View,StyleSheet,TouchableOpacity,Text,Image,Dimensions} from 'react-native';
+import {withNavigation} from 'react-navigation';
 
-class LoginButtons extends Component{
+class LoginButtons extends Component {
     render(){
         return(
             <View style={styles.buttonContainer}>
@@ -24,6 +25,7 @@ class LoginButtons extends Component{
             
             <TouchableOpacity
               style={styles.JoinButton}
+              onPress={() => this.props.navigation.navigate('Login')}
             >
                 <Text style={styles.joinButtonText}> 
                    Join/Sign-in with Email
@@ -100,4 +102,4 @@ const styles = StyleSheet.create({
 
   })
 
-export default LoginButtons;
+export default withNavigation(LoginButtons);

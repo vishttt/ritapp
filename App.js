@@ -4,17 +4,28 @@ import WelcomeScreen from './screens/WelcomeScreen/WelcomeScreen';
 import LoginScreen from './screens/login_screen';
 import { createStackNavigator } from 'react-navigation';
 
+const AppNavigator = createStackNavigator(
+  {
+    Welcome: {
+      screen: WelcomeScreen
+    },
+    Login:  {
+      screen: LoginScreen
+    }
+  },
+  {
+    initialRouteName: 'Welcome'
+  }
+);
 
-const Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <WelcomeScreen />
-      </View>
+        <AppNavigator style={styles.container} />
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -25,8 +36,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createStackNavigator({
-  Login: {
-    screen: LoginScreen
-  },
-});
+// export default createAppContainer(AppNavigator);
