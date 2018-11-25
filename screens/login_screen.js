@@ -1,39 +1,45 @@
 import React from 'react';
-import {Text, View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, TextInput, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native';
+import CompanyFooter from '../components/CompanyFooter/CompanyFooter';
 
 export default class LoginScreen extends React.Component {
     render () {
         return (
+            <ImageBackground source={require('../Assets/MainBG.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={styles.container}>
-                <View>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="e-mail"
-                        onChangeText={(text) => this.setState({text})}
-                    />
-                    
-                    <View style={styles.passwordLoginContainer}>
+                    <View>
                         <TextInput
-                            style={[styles.input, { flex: 1 }]}
-                            placeholder="password"
+                            style={styles.input}
+                            placeholder="e-mail"
                             onChangeText={(text) => this.setState({text})}
                         />
-                        <TouchableOpacity style={styles.loginButton}>
-                            <Text style={styles.loginText}>Log in</Text>
-                        </TouchableOpacity>
+                        
+                        <View style={styles.passwordLoginContainer}>
+                            <TextInput
+                                style={[styles.input, { flex: 1 }]}
+                                placeholder="password"
+                                onChangeText={(text) => this.setState({text})}
+                            />
+                            <TouchableOpacity style={styles.loginButton}>
+                                <Text style={styles.loginText}>Log in</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                </View>
 
-                <TouchableOpacity style={styles.signupButton}>
-                    <Text style={styles.signupText}>Create New Account</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.signupButton}>
+                        <Text style={styles.signupText}>Create New Account</Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity style={styles.forgotPasswordButton}>
-                    <Text style={styles.forgotPasswordText}>
-                        Forgot Password?
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.forgotPasswordButton}>
+                        <Text style={styles.forgotPasswordText}>
+                            Forgot Password?
+                        </Text>
+                    </TouchableOpacity>
+
+                    <CompanyFooter/>
             </View>
+            </ImageBackground>
+            
         )
     }
 }

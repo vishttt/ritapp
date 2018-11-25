@@ -14,7 +14,8 @@ const AppNavigator = createStackNavigator(
     }
   },
   {
-    initialRouteName: 'Welcome'
+    headerMode: 'none',
+    initialRouteName: 'Welcome',
   }
 );
 
@@ -35,5 +36,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   }
 });
-
-// export default createAppContainer(AppNavigator);
