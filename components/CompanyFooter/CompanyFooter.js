@@ -25,11 +25,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 15,
         width: wdth * 0.75,
-        marginBottom: 20,
+        marginBottom: 40,
+        color: 'white',
     },
     copyRight:{
         textAlign: 'center',
-        fontSize: 16
+        fontSize: 16,
+        color: 'white',
     },
     links:{
         flexDirection: 'row',
@@ -37,11 +39,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexWrap: 'nowrap',
         textAlign:'center',
+        color: 'white',
     },
     link:{
         textAlign: 'center',
         fontSize: 16,
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        color: 'white',
     }
 
 });

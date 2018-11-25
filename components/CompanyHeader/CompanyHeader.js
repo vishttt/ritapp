@@ -5,6 +5,7 @@ class CompanyHeader extends Component{
     render(){
         return(
             <View style = {styles.backgroundCircle}>
+                <Image style={styles.circlebackground} source= {require('../../Assets/Oval_BG.png')} />
                 <Image style={styles.ritLogo} source = {require('../../Assets/RitLogoWhite_2x.png')} />
                 <Text style={styles.welcomeSlogan}>Her şeyin bir puanı var... Sen de oyla!</Text>
                 <Text style={styles.welcomeText}>Rit ile her şeye puan verebilir, arkadaşlarının ve diğer insanların düşüncelerini öğrenebilirsin...</Text>
@@ -14,12 +15,19 @@ class CompanyHeader extends Component{
 }
 const wdth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
-    backgroundCircle: {
-        height: 275,
+    circlebackground :{
+        position: 'absolute',
         width: wdth,
-        backgroundColor: '#35465c',
+        height: 365,
+        marginTop: -55,
+    },
+    backgroundCircle: {
+        height: 315,
+        width: wdth,
+        backgroundColor: 'transparent',
         overflow:'hidden',
         justifyContent: 'flex-start',
+        marginBottom: 5,
     },
     ritLogo:{
         alignSelf: 'center',

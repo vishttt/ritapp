@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: wdth * 0.75,
         marginVertical: 5,
-        fontSize: 18
+        fontSize: 18,
+        color: 'white',
     }
 
   })
