@@ -3,16 +3,17 @@ import {View,StyleSheet,Text,Dimensions} from 'react-native';
 
 
 class CompanyFooter extends Component{
+
     render(){
         return(
             <View style={styles.companyContainer}>
-                <Text style={styles.copyRight}>(c) 2016 Rit Inc. Estonia, All Rights Reserved</Text>
-                <Text style={styles.links}>
-                    <Text style={styles.link}>About Rit</Text>
+                <Text style={[styles.copyRight,{color:this.props.clr}]} >(c) 2016 Rit Inc. Estonia, All Rights Reserved</Text>
+                <Text style={[styles.links,{color:this.props.clr}]}>
+                    <Text style={[styles.link,{color:this.props.clr}]} >About Rit</Text>
                     <Text> - </Text>
-                    <Text style={styles.link}>Privacy Policy</Text>
+                    <Text style={[styles.link,{color:this.props.clr}]}>Privacy Policy</Text>
                     <Text> - </Text>
-                    <Text style={styles.link}>Terms of Service</Text>
+                    <Text style={[styles.link,{color:this.props.clr}]}>Terms of Service</Text>
                 </Text>
             </View>
         )
@@ -26,12 +27,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         width: wdth * 0.75,
         marginBottom: 40,
-        color: 'white',
     },
     copyRight:{
         textAlign: 'center',
         fontSize: 16,
-        color: 'white',
     },
     links:{
         flexDirection: 'row',
@@ -39,13 +38,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexWrap: 'nowrap',
         textAlign:'center',
-        color: 'white',
     },
     link:{
         textAlign: 'center',
         fontSize: 16,
         textDecorationLine: 'underline',
-        color: 'white',
     }
 
 });

@@ -5,13 +5,19 @@ import CompanyFooter from '../../components/CompanyFooter/CompanyFooter';
 import CompanyHeader from '../../components/CompanyHeader/CompanyHeader'
 
 class WelcomeScreen extends Component{
+    constructor(){
+        super();
+        this.state = {
+            clr: 'white',
+        }
+    }
     render(){
         return(
             <ImageBackground source={require('../../Assets/MainBG.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={styles.WelcomeContainer}>
                 <CompanyHeader style={styles.cHeader}/>
                 <LoginButtons style={styles.loginBt} />
-                <CompanyFooter style={styles.cFooter}/>
+                <CompanyFooter style={styles.cFooter} clr = {this.state.clr}/>
            </View>
            </ImageBackground>
         )
@@ -26,6 +32,9 @@ const styles = StyleSheet.create({
       width: wdth,
       height: hght
     },
+    cFooter: {
+        color: 'white'
+    }
   })
 
 export default WelcomeScreen;

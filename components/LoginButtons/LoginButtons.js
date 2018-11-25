@@ -8,6 +8,7 @@ class LoginButtons extends Component {
             <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.FacebookButton}
+              onPress={() => this.props.navigation.navigate('Register')}
             >
                 <Text style={styles.fbButtonText}> 
                    Continue with Facebook

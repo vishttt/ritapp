@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import WelcomeScreen from './screens/WelcomeScreen/WelcomeScreen';
 import LoginScreen from './screens/login_screen';
+import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -11,7 +12,10 @@ const AppNavigator = createStackNavigator(
     },
     Login:  {
       screen: LoginScreen
-    }
+    },
+    Register: {
+      screen: RegisterScreen
+    },
   },
   {
     headerMode: 'none',
