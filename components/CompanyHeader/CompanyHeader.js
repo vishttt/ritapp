@@ -8,30 +8,33 @@ class CompanyHeader extends Component{
                 <Image style={styles.circlebackground} source= {require('../../Assets/Oval_BG.png')} />
                 <Image style={styles.ritLogo} source = {require('../../Assets/RitLogoWhite_2x.png')} />
                 <Text style={styles.welcomeSlogan}>Her şeyin bir puanı var... Sen de oyla!</Text>
-                <Text style={styles.welcomeText}>Rit ile her şeye puan verebilir, arkadaşlarının ve diğer insanların düşüncelerini öğrenebilirsin...</Text>
+                <Text style={styles.welcomeText}>Rit ile her şeye puan verebilir, arkadaşlarının ve {'\t'} diğer insanların düşüncelerini öğrenebilirsin...</Text>
             </View>
         )
     }
 }
 const wdth = Dimensions.get('window').width;
+const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     circlebackground :{
         position: 'absolute',
         width: wdth,
-        height: 365,
-        marginTop: -55,
+        height: hght * 0.55,
+        marginTop: -(hght * 0.08),
     },
     backgroundCircle: {
-        height: 315,
+        flex:1,
+        flexDirection: 'column',
+        flexWrap: 'nowrap',
+        height: hght * 0.5,
         width: wdth,
         backgroundColor: 'transparent',
         overflow:'hidden',
-        justifyContent: 'flex-start',
         marginBottom: 5,
     },
     ritLogo:{
         alignSelf: 'center',
-        marginTop: 25,
+        marginTop: 35,
     },
     welcomeSlogan:{
         fontWeight: 'bold',

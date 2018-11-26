@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 15,
         width: wdth * 0.75,
-        marginBottom: 40,
     },
     copyRight:{
         textAlign: 'center',

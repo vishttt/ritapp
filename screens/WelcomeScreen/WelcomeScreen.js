@@ -27,10 +27,10 @@ const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     WelcomeContainer: {
-      alignItems: 'center',
-      justifyContent:'space-between',
-      width: wdth,
-      height: hght
+        flex:1,
+        justifyContent:'space-between',
+        width: wdth,
+        height: hght
     },
     cFooter: {
         color: 'white'

@@ -3,7 +3,7 @@ import {View,StyleSheet,Dimensions,Image,TextInput,Text,TouchableOpacity} from '
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import CompanyFooter from '../../components/CompanyFooter/CompanyFooter';
 
-let radio_props = [
+let radioProps = [
     {label: 'Female  ', value: 0 },
     {label: 'Male  ', value: 1 }
   ];
@@ -39,15 +39,16 @@ class RegisterScreen extends Component{
                                 onChangeText={(birthday) => this.setState({birthday})}
                                 >
                     </TextInput>
-                    <RadioForm
-                        radio_props={radio_props}
-                        initial={-1}
-                        formHorizontal={true}
-                        buttonColor={'#51626b'}
-                        onPress={(value) => {this.setState({value:value})}}
-                        animation={true}
-                        style={styles.RadioBts}
-                    />
+                    <View style={styles.radioButtons}>
+                        <RadioForm
+                            radio_props={radioProps}
+                            initial={-1}
+                            formHorizontal={true}
+                            buttonColor={'#51626b'}
+                            onPress={(value) => {this.setState({value:value})}}
+                            animation={true}
+                        />
+                    </View>
 
 
                     <View style={styles.Buttons}>
@@ -68,28 +69,40 @@ const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     RegisterContainer: {
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      flex:1,
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
       width: wdth,
       height: hght,
       backgroundColor: '#fff',
     },
     SignupHeader: {
+        justifyContent: 'flex-start',
         height: hght * 0.175,
         width: wdth,
-        marginTop: -25,
+        marginTop: -(hght * 0.05),
     },
 
     RegisterForm: {
-        width: wdth * 0.8,
-        height: hght * 0.5,
+        flex:1,
+        flexDirection: 'column',
+        flexWrap: 'nowrap',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        width: wdth,
+        position: 'relative',
+        marginTop: hght * 0.075,
     },
     RegisterHeader:{
-        textAlign: 'left',
-        fontSize: 24,
+        width: wdth * 0.8,
+        justifyContent: 'center',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+        fontSize: 36,
         fontWeight: '400',
-        paddingLeft: 10,
         color: '#51626b',
+        marginBottom: 20,
+        paddingLeft: 20,
 
     },
     RegisterInput:{
@@ -101,12 +114,14 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         padding: 10,
         marginBottom: 10,
+        fontSize: 20,
     },
     Buttons:{
         flex:1,
+        width: wdth * 0.8,
         flexDirection: 'row',
         flexWrap: 'nowrap',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         marginTop: 20,
         
     },
@@ -133,8 +148,15 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
     },
-    RadioBts:{
+    radioButtons:{
+        width: wdth * 0.8,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         marginTop: 15,
+    },
+    cFooter:{
+        position: 'absolute',
+        bottom: 0,
     }
   })
 export default RegisterScreen;

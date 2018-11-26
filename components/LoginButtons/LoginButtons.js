@@ -8,7 +8,6 @@ class LoginButtons extends Component {
             <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.FacebookButton}
-              onPress={() => this.props.navigation.navigate('Register')}
             >
                 <Text style={styles.fbButtonText}> 
                    Continue with Facebook
@@ -37,13 +36,13 @@ class LoginButtons extends Component {
     }
 }
 const wdth = Dimensions.get('window').width;
-
+const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     buttonContainer: {
-      alignSelf: 'center',
-      justifyContent: 'center',
-      paddingHorizontal: 10,
-      width: wdth * 0.75,
+        alignSelf: 'center',
+        paddingHorizontal: 10,
+        width: wdth * 0.75,
+        marginBottom: 25,
     },
     FacebookButton: {
       display:'flex',

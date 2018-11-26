@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import WelcomeScreen from './screens/WelcomeScreen/WelcomeScreen';
 import LoginScreen from './screens/login_screen';
 import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
+import ForgotPassword from './screens/ForgotPasswordScreen/ForgotPasswordScreen';
+import FPConfirmation from './screens/FPConfirmationScreen/FPConfirmationScreen';
+import demoscreen from './screens/DemoScreen/demoscreen';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
   {
+    Demo:{
+      screen: demoscreen
+    },
     Welcome: {
       screen: WelcomeScreen
     },
@@ -16,10 +22,16 @@ const AppNavigator = createStackNavigator(
     Register: {
       screen: RegisterScreen
     },
+    ForgotPassword:{
+      screen: ForgotPassword
+    },
+    FPConfirmation:{
+      screen: FPConfirmation
+    }
   },
   {
     headerMode: 'none',
-    initialRouteName: 'Welcome',
+    initialRouteName: 'Demo',
   }
 );
 
