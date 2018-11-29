@@ -9,6 +9,7 @@ class LoginButtons extends Component {
             <TouchableOpacity
               style={styles.FacebookButton}
             >
+                <Image style={styles.fbIcon} source={require('../../Assets/FaceLogin.png')}/>
                 <Text style={styles.fbButtonText}> 
                    Continue with Facebook
                 </Text>
@@ -16,6 +17,7 @@ class LoginButtons extends Component {
             <TouchableOpacity
               style={styles.GoogleButton}
             >
+                <Image style={styles.fbIcon} source={require('../../Assets/GoogleLogin.png')}/>
                 <Text style={styles.gButtonText}> 
                    Continue with Google
                 </Text>
@@ -35,38 +37,57 @@ class LoginButtons extends Component {
         )
     }
 }
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
+    }
+}
 const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     buttonContainer: {
+        display:'flex',
         alignSelf: 'center',
         paddingHorizontal: 10,
-        width: wdth * 0.75,
-        marginBottom: 25,
+        width: wdth * 0.7,
+        marginTop: 10,
+        justifyContent: 'space-between',
     },
     FacebookButton: {
-      display:'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#3B5998',
-      height: 50,
-      width: wdth * 0.75,
-      marginVertical: 5,
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: '#3B5998'
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'space-around',
+        alignItems:'center',
+        alignSelf: 'center',
+        backgroundColor: '#3B5998',
+        height: hght * 0.07,
+        width: wdth * 0.7,
+        marginVertical: 5,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#3B5998',
     },
     fbButtonText:{
         color:'white',
-        fontSize: 18,
+        fontSize: fontSizer(wdth)+2,
     },
     GoogleButton:{
-        display:'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'space-around',
+        alignItems:'center',
+        alignSelf: 'center',
         backgroundColor: '#DDDDDD',
-        height: 50,
-        width: wdth * 0.75,
+        height: hght * 0.07,
+        width: wdth * 0.7,
         marginVertical: 5,
         borderRadius: 10,
         borderWidth: 1,
@@ -74,15 +95,15 @@ const styles = StyleSheet.create({
     },
     gButtonText:{
         color: 'black',
-        fontSize: 18
+        fontSize: fontSizer(wdth)+2,
     },
     JoinButton:{
-        display:'flex',
         alignItems: 'center',
+        alignSelf: 'center',
         justifyContent: 'center',
         backgroundColor: '#35465c',
-        height: 50,
-        width: wdth * 0.75,
+        height: hght * 0.07,
+        width: wdth * 0.7,
         marginVertical: 5,
         borderRadius: 10,
         borderWidth: 1,
@@ -90,14 +111,15 @@ const styles = StyleSheet.create({
     },
     joinButtonText:{
         color:'white',
-        fontSize: 18
+        fontSize: fontSizer(wdth)+2,
     },
     or:{
+        alignSelf: 'center',
         textAlign: 'center',
         justifyContent: 'center',
         width: wdth * 0.75,
         marginVertical: 5,
-        fontSize: 18,
+        fontSize: fontSizer(wdth),
         color: 'white',
     }
 

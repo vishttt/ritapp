@@ -30,6 +30,19 @@ class FPConfirmationScreen extends Component{
         )
     }
 }
+
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
+    }
+}
+
 const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
@@ -40,27 +53,28 @@ const styles = StyleSheet.create({
         width: wdth,
         height: hght,
         backgroundColor: '#fff',  
+        justifyContent: 'space-between',
     },
     fpcHeader: {
+        display:'flex',
         justifyContent: 'flex-start',
         height: hght * 0.175,
         width: wdth,
         marginTop: -(hght * 0.05),
     },
     fpcDone: {
-        flex:1,
+        display:'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
         justifyContent: 'center',
         alignSelf: 'center',
         width: wdth,
-        position: 'relative',
         marginBottom: hght * 0.1,
 
     },
     fpcHeaderText:{
         textAlign: 'center',
-        fontSize: 36,
+        fontSize: fontSizer(wdth) * 2,
         fontWeight: '400',
         color: '#51626b',
         marginBottom: 30,
@@ -70,7 +84,7 @@ const styles = StyleSheet.create({
         width: wdth * 0.9,
         alignSelf: 'center',
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: fontSizer(wdth),
         fontWeight: '400',
         color:'#7e878c',
         marginBottom: 20,
@@ -84,7 +98,8 @@ const styles = StyleSheet.create({
         
     },
     fpcButton:{
-        height: 50,
+        height: wdth * 0.1,
+        maxHeight: 50,
         width: 140,
         backgroundColor: "#486270",
         marginLeft: 'auto',
@@ -97,12 +112,12 @@ const styles = StyleSheet.create({
     fpcButtonText :{
         color: 'white',
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: fontSizer(wdth),
 
     },
     cFooter:{
-        position: 'absolute',
-        top:0,
+        display:'flex',
+        alignSelf:'flex-end',
     }
 
   })

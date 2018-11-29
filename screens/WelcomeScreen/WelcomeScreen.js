@@ -29,12 +29,8 @@ const styles = StyleSheet.create({
     WelcomeContainer: {
         flex:1,
         justifyContent:'space-between',
-        width: wdth,
-        height: hght
+
     },
-    cFooter: {
-        color: 'white'
-    }
   })
 
 export default WelcomeScreen;

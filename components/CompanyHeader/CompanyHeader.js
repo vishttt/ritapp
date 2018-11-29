@@ -13,41 +13,57 @@ class CompanyHeader extends Component{
         )
     }
 }
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
+    }
+}
 const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     circlebackground :{
         position: 'absolute',
         width: wdth,
-        height: hght * 0.55,
-        marginTop: -(hght * 0.08),
+        height: hght * 0.45,
+        marginTop: -(hght * 0.05),
     },
     backgroundCircle: {
-        flex:1,
+        display:'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
-        height: hght * 0.5,
+        height: hght * 0.4,
         width: wdth,
         backgroundColor: 'transparent',
         overflow:'hidden',
         marginBottom: 5,
+        alignSelf: 'flex-start',
     },
     ritLogo:{
+        width: wdth * 0.35,
+        height: wdth * 0.35,
         alignSelf: 'center',
-        marginTop: 35,
+        marginTop: hght * 0.05,
     },
     welcomeSlogan:{
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: fontSizer(wdth) + 1 ,
         color: 'white',
         textAlign: 'center',
-        marginTop: 5
+        marginTop: 5,
+        alignSelf:'center',
     },
     welcomeText:{
         alignSelf : 'center',
-        fontSize: 16,
+        fontSize: fontSizer(wdth) - 3,
         color: 'white',
         width: wdth * 0.8,
+        textAlign:'center',
     }
 });
 

@@ -11,7 +11,7 @@ class RegisterScreen extends Component{
     constructor(){
         super();
         this.state = {
-            clr: 'black',
+            clr: '#35465c',
             username: '',
             email: '',
             birthday: '',
@@ -47,6 +47,9 @@ class RegisterScreen extends Component{
                             buttonColor={'#51626b'}
                             onPress={(value) => {this.setState({value:value})}}
                             animation={true}
+                            buttonSize={15}
+                            buttonWrapStyle={{marginLeft: 10}}
+
                         />
                     </View>
 
@@ -65,6 +68,19 @@ class RegisterScreen extends Component{
         )
     }
 }
+
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
+    }
+}
+
 const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
@@ -72,41 +88,42 @@ const styles = StyleSheet.create({
       flex:1,
       flexDirection: 'column',
       flexWrap: 'nowrap',
-      width: wdth,
-      height: hght,
       backgroundColor: '#fff',
+      justifyContent : "space-between",
     },
     SignupHeader: {
-        justifyContent: 'flex-start',
+        display:'flex',
+        justifyContent: 'center',
+        alignSelf:'flex-start',
         height: hght * 0.175,
         width: wdth,
         marginTop: -(hght * 0.05),
     },
 
     RegisterForm: {
-        flex:1,
+        display:'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignSelf: 'center',
         width: wdth,
-        position: 'relative',
-        marginTop: hght * 0.075,
+        height: hght * 0.5,
+
     },
     RegisterHeader:{
-        width: wdth * 0.8,
+        width: wdth * 0.7,
         justifyContent: 'center',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        fontSize: 36,
+        alignSelf: 'center',
+        fontSize: fontSizer(wdth) * 2,
         fontWeight: '400',
         color: '#51626b',
-        marginBottom: 20,
-        paddingLeft: 20,
+        paddingLeft: 15,
+        textAlign:'left',
 
     },
     RegisterInput:{
-        width: wdth * 0.8,
+        display:'flex',
+        width: wdth * 0.7,
         flexDirection: 'column',
         alignSelf: 'center',
         backgroundColor: 'white',
@@ -114,49 +131,51 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         padding: 10,
         marginBottom: 10,
-        fontSize: 20,
+        fontSize: fontSizer(wdth),
     },
     Buttons:{
-        flex:1,
-        width: wdth * 0.8,
+        display:'flex',
+        width: wdth * 0.7,
         flexDirection: 'row',
         flexWrap: 'nowrap',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         marginTop: 20,
+        alignSelf: 'center'
         
     },
     RegisterButton:{
-        height: 50,
-        width: 125,
+        height: wdth * 0.1,
+        width: 100,
         backgroundColor: "#486270",
         justifyContent: 'center',
         borderRadius: 5,
-        marginRight: 20,
+        marginRight: 15,
     },
     RegisterText :{
         color: 'white',
         textAlign: 'center',
     },
     CancelButton:{
-        height: 50,
+        height: wdth * 0.1,
+        maxHeight: 50,
         width: 100,
         backgroundColor: "#7e878c",
         justifyContent: 'center',
         borderRadius: 5,
+        alignSelf: 'center',
     },
     CancelText:{
         color: 'white',
         textAlign: 'center',
     },
     radioButtons:{
-        width: wdth * 0.8,
+        width: wdth * 0.7,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 15,
     },
     cFooter:{
-        position: 'absolute',
-        bottom: 0,
+        alignSelf: 'flex-end',
     }
   })
 export default RegisterScreen;

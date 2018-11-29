@@ -32,6 +32,11 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>FPConfirmation</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('Home')}
+                >
+                    <Text style={styles.txt}>HomeScreen</Text>
+                </TouchableOpacity>
            </View>
         )
     }

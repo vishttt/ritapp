@@ -34,9 +34,22 @@ class ForgotPasswordScreen extends Component{
                         </TouchableOpacity>
                     </View>
                 </View>
-                <CompanyFooter style={styles.cFooter} clr = {this.state.clr}/>
+                <View style={styles.cFooter}>
+                    <CompanyFooter clr = {this.state.clr}/>
+                </View>
            </View>
         )
+    }
+}
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
     }
 }
 const wdth = Dimensions.get('window').width;
@@ -49,8 +62,10 @@ const styles = StyleSheet.create({
         width: wdth,
         height: hght,
         backgroundColor: '#fff',  
+        justifyContent : 'space-between',
     },
     FPHeader: {
+        display:'flex',
         justifyContent: 'flex-start',
         height: hght * 0.175,
         width: wdth,
@@ -58,19 +73,18 @@ const styles = StyleSheet.create({
     },
 
     FPForm: {
-        flex:1,
+        display:'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
         justifyContent: 'center',
         alignSelf: 'center',
         width: wdth,
         position: 'relative',
-        marginTop: hght * 0.075,
 
     },
     FPHeaderText:{
         textAlign: 'center',
-        fontSize: 36,
+        fontSize: fontSizer(wdth) * 2,
         fontWeight: '400',
         color: '#51626b',
         marginBottom: 30,
@@ -81,7 +95,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         textAlign: 'center',
         textAlignVertical: 'center',
-        fontSize: 17,
+        fontSize:fontSizer(wdth),
         fontWeight: '400',
         color:'#7e878c',
         marginBottom: 20,
@@ -95,19 +109,21 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         padding: 10,
         marginBottom: 10,
-        fontSize: 22,
+        fontSize: fontSizer(wdth),
     },
     Buttons:{
-        flex:1,
+        display:'flex',
         width: wdth * 0.8,
         flexDirection: 'row',
         flexWrap: 'nowrap',
         justifyContent: 'center',
         marginTop: 20,
+        alignSelf: 'center',
         
     },
     FPButton:{
-        height: 50,
+        height: wdth * 0.1,
+        maxHeight: 50,
         width: 125,
         backgroundColor: "#486270",
         justifyContent: 'center',
@@ -121,7 +137,8 @@ const styles = StyleSheet.create({
 
     },
     CancelButton:{
-        height: 50,
+        height: wdth * 0.1,
+        maxHeight: 50,
         width: 100,
         backgroundColor: "#7e878c",
         justifyContent: 'center',
@@ -132,8 +149,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     cFooter:{
-        position: 'absolute',
-        top:0,
+        display:'flex',
     }
 
   })

@@ -19,17 +19,31 @@ class CompanyFooter extends Component{
         )
     }
 }
+const fontSizer = (screenWidth) => {
+    if(screenWidth > 400){
+        return 16;
+    }
+    else if(screenWidth > 250){
+        return 14;
+    }
+    else{
+        return 12;
+    }
+}
 const wdth = Dimensions.get('window').width;
+const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     companyContainer:{
+        display:'flex',
         alignSelf: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         paddingHorizontal: 15,
         width: wdth * 0.75,
+        height: hght * 0.2,
     },
     copyRight:{
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: fontSizer(wdth) - 1,
     },
     links:{
         flexDirection: 'row',
@@ -40,7 +54,7 @@ const styles = StyleSheet.create({
     },
     link:{
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: fontSizer(wdth) - 1,
         textDecorationLine: 'underline',
     }
 
