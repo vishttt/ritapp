@@ -37,7 +37,9 @@ const AppNavigator = createStackNavigator(
     Friends:{
       screen: Friends
     },
-    AddInvite: AddInvite
+    AddInvite: {
+      screen: AddInvite
+    },
   },
   {
     headerMode: 'none',
