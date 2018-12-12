@@ -7,6 +7,8 @@ import ForgotPassword from './screens/ForgotPasswordScreen/ForgotPasswordScreen'
 import FPConfirmation from './screens/FPConfirmationScreen/FPConfirmationScreen';
 import demoscreen from './screens/DemoScreen/demoscreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
+import Friends from './screens/Friends/Friends';
+import AddInvite from './screens/AddInvite/AddInvite';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -31,7 +33,11 @@ const AppNavigator = createStackNavigator(
     },
     Home:{
       screen: HomeScreen
-    }
+    },
+    Friends:{
+      screen: Friends
+    },
+    AddInvite: AddInvite
   },
   {
     headerMode: 'none',

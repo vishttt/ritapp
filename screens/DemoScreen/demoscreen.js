@@ -37,6 +37,16 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>HomeScreen</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('Friends')}
+                >
+                    <Text style={styles.txt}>Friends</Text>
+                </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('AddInvite')}
+                >
+                    <Text style={styles.txt}>AddInvite</Text>
+                </TouchableOpacity>
            </View>
         )
     }
