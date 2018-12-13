@@ -9,6 +9,7 @@ import demoscreen from './screens/DemoScreen/demoscreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import Friends from './screens/Friends/Friends';
 import AddInvite from './screens/AddInvite/AddInvite';
+import AddComment from './screens/AddComment/AddComment';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -40,6 +41,9 @@ const AppNavigator = createStackNavigator(
     AddInvite: {
       screen: AddInvite
     },
+    AddComment:{
+      screen: AddComment
+    }
   },
   {
     headerMode: 'none',
