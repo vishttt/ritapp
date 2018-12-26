@@ -52,6 +52,11 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>AddComment</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('FriendDetails')}
+                >
+                    <Text style={styles.txt}>FriendDetails</Text>
+                </TouchableOpacity>
            </View>
         )
     }

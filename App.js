@@ -8,6 +8,7 @@ import FPConfirmation from './screens/FPConfirmationScreen/FPConfirmationScreen'
 import demoscreen from './screens/DemoScreen/demoscreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import Friends from './screens/Friends/Friends';
+import FriendDetails from './screens/FriendDetails/FriendDetails';
 import AddInvite from './screens/AddInvite/AddInvite';
 import AddComment from './screens/AddComment/AddComment';
 import { createStackNavigator } from 'react-navigation';
@@ -43,7 +44,10 @@ const AppNavigator = createStackNavigator(
     },
     AddComment:{
       screen: AddComment
-    }
+    },
+    FriendDetails:{
+      screen: FriendDetails
+    },
   },
   {
     headerMode: 'none',

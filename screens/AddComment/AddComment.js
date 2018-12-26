@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View,StyleSheet,Dimensions,Image,TextInput,Text,TouchableOpacity} from 'react-native';
 
 
-class HomeScreen extends Component{
+class AddComment extends Component{
     constructor(){
         super();
         this.state={
@@ -224,4 +224,4 @@ const styles = StyleSheet.create({
     
 });
 
-export default HomeScreen;
+export default AddComment;
