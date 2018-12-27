@@ -57,6 +57,11 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>FriendDetails</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('AddTopicExist')}
+                >
+                    <Text style={styles.txt}>AddTopicExist</Text>
+                </TouchableOpacity>
            </View>
         )
     }
