@@ -12,6 +12,7 @@ import FriendDetails from './screens/FriendDetails/FriendDetails';
 import AddInvite from './screens/AddInvite/AddInvite';
 import AddComment from './screens/AddComment/AddComment';
 import AddTopicExist from './screens/AddTopicExist/AddTopicExist';
+import TopicAddOk from './screens/TopicAddOk/TopicAddOk';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -51,7 +52,10 @@ const AppNavigator = createStackNavigator(
     },
     AddTopicExist:{
       screen: AddTopicExist
-    }
+    },
+    TopicAddOk:{
+      screen: TopicAddOk
+    },
   },
   {
     headerMode: 'none',
