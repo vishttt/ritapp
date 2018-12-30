@@ -1,11 +1,12 @@
+import utils from '../../utils';
 import React, {Component} from 'react';
-import {View,StyleSheet,Dimensions,Image,TextInput,Text,TouchableOpacity} from 'react-native';
+import {View,StyleSheet,Dimensions,Image,TextInput,Text,TouchableOpacity, Alert} from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import CompanyFooter from '../../components/CompanyFooter/CompanyFooter';
 
 let radioProps = [
-    {label: 'Female  ', value: 0 },
-    {label: 'Male  ', value: 1 }
+    {label: 'Female  ', value: 'F' },
+    {label: 'Male  ', value: 'M' }
   ];
 class RegisterScreen extends Component{
     constructor(){
@@ -15,15 +16,54 @@ class RegisterScreen extends Component{
             username: '',
             email: '',
             birthday: '',
-            value: 0,
+            gender: 'M',
+            errors: []
         }
     }
+
+    onPressRegisterButton = () => {
+        let endpoint = global.baseApiUrl + 'register';
+        let response = fetch(endpoint, {
+            method: 'POST',
+            body: JSON.stringify({
+                username: this.state.username,
+                email: this.state.email,
+                birth_date: this.state.birthday,
+                gender: this.state.gender
+            })
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            if(responseJson.hasOwnProperty("error")){
+                return this.setState({
+                    errors: responseJson.error.message.split(";")
+                });
+            }
+
+            Alert.alert("Registered!!", "Your password is sent to your email", [
+                {
+                    text: 'OK', 
+                    onPress: () => this.props.navigation.navigate('Login')
+                },
+              ],
+            );
+        })
+        .catch((error) => {
+            this.setState({
+                errors: ['Could not registered. Please try again later.']
+            })
+        });
+    
+        
+    }
+
     render(){
         return(
             <View style={styles.RegisterContainer}>
                 <Image style={styles.SignupHeader} source= {require('../../Assets/Signup_Header.png')}/>
                 <View style={styles.RegisterForm}>
                     <Text style={styles.RegisterHeader}>Sign-Up</Text>
+                    {this.state.errors.map(msg => <Text key={msg}>{msg}</Text>)} 
                     <TextInput  style={styles.RegisterInput}
                                 placeholder ='Username'
                                 onChangeText={(username) => this.setState({username})}
@@ -45,7 +85,7 @@ class RegisterScreen extends Component{
                             initial={-1}
                             formHorizontal={true}
                             buttonColor={'#51626b'}
-                            onPress={(value) => {this.setState({value:value})}}
+                            onPress={(value) => {this.setState({gender:value})}}
                             animation={true}
                             buttonSize={15}
                             buttonWrapStyle={{marginLeft: 10}}
@@ -55,7 +95,7 @@ class RegisterScreen extends Component{
 
 
                     <View style={styles.Buttons}>
-                        <TouchableOpacity style={styles.RegisterButton}>
+                        <TouchableOpacity onPress={this.onPressRegisterButton} style={styles.RegisterButton}>
                             <Text style={styles.RegisterText}>Sign me up!</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.CancelButton}>
@@ -66,18 +106,6 @@ class RegisterScreen extends Component{
                 <CompanyFooter style={styles.cFooter} clr = {this.state.clr}/>
            </View>
         )
-    }
-}
-
-const fontSizer = (screenWidth) => {
-    if(screenWidth > 400){
-        return 16;
-    }
-    else if(screenWidth > 250){
-        return 14;
-    }
-    else{
-        return 12;
     }
 }
 
@@ -114,7 +142,7 @@ const styles = StyleSheet.create({
         width: wdth * 0.7,
         justifyContent: 'center',
         alignSelf: 'center',
-        fontSize: fontSizer(wdth) * 2,
+        fontSize: utils.fontSizer(wdth) * 2,
         fontWeight: '400',
         color: '#51626b',
         paddingLeft: 15,
@@ -131,7 +159,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         padding: 10,
         marginBottom: 10,
-        fontSize: fontSizer(wdth),
+        fontSize: utils.fontSizer(wdth),
     },
     Buttons:{
         display:'flex',

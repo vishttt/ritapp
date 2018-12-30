@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
+    "react-native-device-info": "^0.24.3",
     "react-native-simple-radio-button": "^2.7.3",
     "react-native-svg-charts": "^5.2.0",
     "react-navigation": "^2.18.0"

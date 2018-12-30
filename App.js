@@ -75,6 +75,7 @@ export default class App extends Component {
   }
 }
 
+global.baseApiUrl = "http://82.196.0.238/rit/api/";
 
 const styles = StyleSheet.create({
   container: {
