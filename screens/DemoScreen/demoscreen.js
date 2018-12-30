@@ -67,6 +67,11 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>TopicAddOk</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('Compare')}
+                >
+                    <Text style={styles.txt}>Compare</Text>
+                </TouchableOpacity>
            </View>
         )
     }

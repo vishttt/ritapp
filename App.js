@@ -13,6 +13,7 @@ import AddInvite from './screens/AddInvite/AddInvite';
 import AddComment from './screens/AddComment/AddComment';
 import AddTopicExist from './screens/AddTopicExist/AddTopicExist';
 import TopicAddOk from './screens/TopicAddOk/TopicAddOk';
+import Compare from './screens/CompareScreen/Compare';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -55,6 +56,9 @@ const AppNavigator = createStackNavigator(
     },
     TopicAddOk:{
       screen: TopicAddOk
+    },
+    Compare:{
+      screen: Compare
     },
   },
   {
