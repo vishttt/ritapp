@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View,StyleSheet,Dimensions,Image,Text,TouchableOpacity} from 'react-native';
-import { BarChart, Grid } from 'react-native-svg-charts'
+import { BarChart, Grid,YAxis } from 'react-native-svg-charts';
 
 
 class InfoPopup extends Component{
@@ -11,9 +11,9 @@ class InfoPopup extends Component{
         }
     }
     render(){
-        const data = [ 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80 ]
+        const data   = [ 3,5,1,3.6,1.1,2,4.1,0.2,3.5,5 ]
 
-        const fill = 'rgb(134, 65, 244)'
+        const fill = '#4985e5'
         return(
             <View style={styles.infoPopupContainer}>
                 <View style={styles.header}>
@@ -48,16 +48,27 @@ class InfoPopup extends Component{
                         </TouchableOpacity>
                     </View>
                 </View>
-                
+                <Text style={{textAlign:'left'}}>Rit Trend Last 10 Days</Text>
                 <View style={styles.rateHistory}>
+                    
                     <BarChart
-                        style={{ height: 200 }}
+                        style={{ flex:1,marginLeft: 5 }}
+                        gridMin={1}
+                        gridMax={5}
                         data={ data }
                         svg={{ fill }}
-                        contentInset={{ top: 30, bottom: 30 }}
+                        contentInset={{ top: 20, bottom: 20 }}
                         >
                         <Grid/>
                     </BarChart>
+                    <YAxis
+                        style={{}}
+                        data={data}
+                        numberOfTicks={5}
+                        formatLabel={(value,index) => index+1}
+                        contentInset={{top:20,bottom:20}}
+                        svg={{fontSize: 10, fill:'black'}}
+                        />
                 </View>
 
                 <View style={styles.popupFooter}>
@@ -88,7 +99,7 @@ const fontSizer = (screenWidth) => {
 const wdth = Dimensions.get('window').width;
 const hght = Dimensions.get('window').height;
 const styles = StyleSheet.create({
-    compareContainer:{
+    infoPopupContainer:{
         flex:1,
         width: wdth,
         height: hght,
@@ -164,12 +175,9 @@ const styles = StyleSheet.create({
         fontWeight:'500',
     },
     rateHistory:{
-        height: hght * 0.35,
-        width: wdth,
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        alignSelf:'center',
+        height: 200,
+        padding: 20,
+        flexDirection:'row-reverse',
     },
     popupFooter:{
         display:'flex',

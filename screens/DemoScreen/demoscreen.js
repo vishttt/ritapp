@@ -77,6 +77,11 @@ class demoscreen extends Component{
                 >
                     <Text style={styles.txt}>InfoPopup</Text>
                 </TouchableOpacity>
+                <TouchableOpacity   style={styles.bttn}
+                                    onPress={() => this.props.navigation.navigate('MapSearch')}
+                >
+                    <Text style={styles.txt}>MapSearch</Text>
+                </TouchableOpacity>
            </View>
         )
     }

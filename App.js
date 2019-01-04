@@ -15,6 +15,7 @@ import AddTopicExist from './screens/AddTopicExist/AddTopicExist';
 import TopicAddOk from './screens/TopicAddOk/TopicAddOk';
 import Compare from './screens/CompareScreen/Compare';
 import InfoPopup from './screens/InfoPopup/InfoPopup';
+import MapSearch from './screens/MapSearch/MapSearch';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -63,6 +64,9 @@ const AppNavigator = createStackNavigator(
     },
     InfoPopup:{
       screen: InfoPopup
+    },
+    MapSearch:{
+      screen: MapSearch
     }
   },
   {
