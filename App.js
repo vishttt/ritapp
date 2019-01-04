@@ -14,6 +14,7 @@ import AddComment from './screens/AddComment/AddComment';
 import AddTopicExist from './screens/AddTopicExist/AddTopicExist';
 import TopicAddOk from './screens/TopicAddOk/TopicAddOk';
 import Compare from './screens/CompareScreen/Compare';
+import InfoPopup from './screens/InfoPopup/InfoPopup';
 import { createStackNavigator } from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
@@ -60,6 +61,9 @@ const AppNavigator = createStackNavigator(
     Compare:{
       screen: Compare
     },
+    InfoPopup:{
+      screen: InfoPopup
+    }
   },
   {
     headerMode: 'none',
